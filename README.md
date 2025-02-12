@@ -1,7 +1,3 @@
-##project start
-react --typescript \
-react-router-dom \
-firebase \
 
 ##yarn start
 Runs the app in the development mode.
