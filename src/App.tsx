@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import {useState, useEffect} from "react";
+import {app} from "./firebase";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {useContext} from "react";
+import Router from "./components/Router";
+import Loader from "./components/Loader";
+import { AuthContext } from "./context/AuthContext";
 
-function App() {
+const App = () => {
+  const auth = getAuth(app);
+
+  // 사용자 인증 유무 확인
+  const [authentication, setAuthentication] = useState<boolean>(!! auth?.currentUser );
+
+  // auth를 체크하기 전 (initalize 전)에 loading 띄우기
+  const [load, setLoad] = useState<boolean>(false);
+
+  useEffect(()=> {
+    onAuthStateChanged(auth, (user) => {
+      if(user){
+        setAuthentication(true)
+      } else {
+        setAuthentication(false);
+      }
+      setLoad(true);
+    })
+  },[auth])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      {load ? <Router authentication={authentication}/> : <Loader/>}
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;

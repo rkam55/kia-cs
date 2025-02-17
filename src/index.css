@@ -1,13 +1,657 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* main-banner */
+
+.main-banner section {
+    position: relative;
+    text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-banner section>:first-child {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    transform: translateY(30%);
+    z-index: 1;
+    color: white;
+    width: 84%;
+    max-width: 900px;
+}
+
+.main-banner section>:first-child h4 {
+    font-weight: 300;
+}
+
+.main-banner section>:first-child h1 {
+    margin: 10px 0 30px;
+    font-size: 1.5rem;
+    font-family: 'Cabin', sans-serif;
+}
+
+.main-banner section>:first-child >div {
+    width: 65%;
+    max-width: 190px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-btn{
+    background-color: #262846;
+    color: white;
+    font-weight: 300;
+    border: 1px solid transparent;
+    transition: 0.3s;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.price-btn:hover{
+    border: 1px solid white;
+    color: white;
+}
+
+.main-banner section>:last-child {
+    width: 100%;
+    position: relative;
+}
+
+.main-banner section>:last-child img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+
+.main-banner section>:last-child>:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.9) 80%);
+}
+
+/* login */
+
+.error-vaild{
+    text-align: left;
+    color: rgb(0, 88, 195);
+    height: 18px;
+    content: none;
+    margin: 5px 0
+}
+
+.login input {
+    width: 100%;
+}
+
+.login>div>:nth-child(2)>:nth-child(2) {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login>div>:nth-child(2)>:nth-child(2)>:first-child {
+    width: 35%;
+    font-weight: bold;
+    justify-content: left;
+}
+
+.login>div>:nth-child(2)>:nth-child(2)>:first-child input {
+    width: 15px;
+    margin-right: 10px;
+}
+
+.login>div>:nth-child(2)>:nth-child(2)>:last-child {
+    width: 45%;
+    justify-content: right;
+}
+
+.login>div>:nth-child(2)>:nth-child(2)>:last-child button {
+    padding: 0;
+    border: 0;
+    background: none;
+    margin-left: 10px;
+}
+
+.login>div>:nth-child(2)>:nth-child(3) button {
+    width: 100%;
+}
+
+.login>div>:nth-child(2)>:nth-child(3) button:first-of-type {
+    margin: 30px 0 10px;
+}
+
+.login>div>:nth-child(2)>:nth-child(3) button:last-of-type {
+    cursor: pointer;
+}
+
+.login>div>:nth-child(2)>:last-child {
+    margin-top: 40px;
+}
+
+.login>div>:nth-child(2)>:last-child>p {
+    margin: 8px 0 30px;
+}
+
+.login>div>:nth-child(2)>:last-child button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.login>div>:nth-child(2)>:last-child button img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.login>div>:nth-child(2)>:last-child button{
+    margin-bottom: 50px;
+}
+
+.login>div>:nth-child(2)>:last-child button p {
+    margin: auto 0;
+}
+
+.login>div>:nth-child(2)>:last-child button:first-of-type:hover {
+    border: 1px solid #2d2d37;
+    color: black;
+}
+
+
+/* join */
+
+.sign-form h4 {
+    margin: 20px;
+}
+
+.sign-form div p {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.sign-form div p:not(.sign-form div p:last-of-type):after {
+    content: "*";
+    color: rgb(69, 145, 189);
+    margin-left: 3px;
+    font-size: 0.9rem;
+}
+
+.sign-form input {
+    width: 100%;
+}
+
+.join-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* header */
+header>div {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    padding: 20px 8%;
+    justify-content: space-between;
+}
+
+header>div img {
+    filter: invert(1);
+}
+
+.header-icon img {
+    filter: invert(1);
+    filter: grayscale(1);
+    filter: contrast(1);
+    width: 30px;
+    margin: 10px auto;
+    margin-left: 10px;
+}
+
+/* footer */
+footer>div {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 8% 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: #f5f5f5;
+}
+
+footer>div>:first-child {
+    width: 100%;
+}
+
+footer>div>:first-child img {
+    filter: invert(1);
+    margin: auto;
+}
+
+footer>div>:nth-child(2) {
+    margin: 30px auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+footer>div>:nth-child(2) {
+    font-weight: bold;
+}
+
+footer>div>:nth-child(3) {
+    width: 80%;
+    margin: auto;
+}
+
+footer>div>:nth-child(3) img {
+    filter: invert(1);
+    transition: 0.3s;
+    width: 20px;
+}
+
+footer>div>:nth-child(3) img:first-of-type {
+    width: 120px;
+}
+
+footer>div>:nth-child(3) img:hover {
+    opacity: 0.5;
+}
+
+footer>div>:nth-child(4) {
+    margin: 40px 0 20px;
+    padding: 30px 10px;
+    width: 100%;
+    background-color: #ddd;
+}
+
+footer>div>:nth-child(4) h3 {
+    font-family: 'Cabin', sans-serif;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+footer>div>:nth-child(4) ul li {
+    margin-top: 5px;
+}
+
+footer>div>ul {
+    width: 100%;
+}
+
+footer>div>ul li {
+    color: #555;
+    margin: 8px 0;
+}
+
+footer>div>ul li:hover {
+    color: black;
+}
+
+footer>div>:nth-child(6) {
+    width: 100%;
+}
+
+footer>div>:nth-child(6) p {
+    margin-top: 40px;
+}
+
+.select-menu {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+footer>div>:last-child .select-btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+footer>div>:last-child .select-btn span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #555;
+}
+
+footer>div>:last-child .select-btn img {
+    width: 12px;
+    margin: auto 0;
+    opacity: 0.7;
+}
+
+.select-menu>div {
+    overflow: hidden;
+}
+
+.select-menu .options {
+    position: absolute;
+    top: -210px;
+    left: 0;
+    width: 100%;
+    background-color: #19191f;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+    text-align: left;
+}
+
+.select-menu .options li {
+    margin: 20px 0;
+    color: #aaa
+}
+
+.select-menu .options li:hover {
+    color: white;
+}
+
+.select-menu.active .options {
+    opacity: 1;
+    visibility: unset;
+    top: -250px;
+}
+
+/* faq */
+.faq>div h5{
+    margin-bottom: 10px;
+}
+
+.faq>div>:nth-child(2) button {
+    background-color: rgb(69, 145, 189);
+    border: 0px;
+}
+
+.faq>div>:nth-child(2) button a {
+    color: white;
+    font-weight: 300;
+}
+
+.faq>div>:nth-child(2) button:hover{
+    background-color: #19191f;
+}
+
+.faq>div ul{
+    margin: 50px 0 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq>div ul li {
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0s;
+}
+
+.faq>div ul li:hover{
+    color: white;
+    background-color: #2d2d37;
+    border: 1px solid #2d2d37;
+}
+
+.faq>div> section  {
+    text-align: left;
+    padding: 30px 0;
+}
+
+.faq>div section>:first-child{
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.faq>div section>:first-child p{
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.faq>div section>:first-child h5 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq>div section>:first-child h5:hover {
+    color: rgb(69, 145, 189);
+}
+
+.faq>div section>:last-child {
+    background-color: #f5f5f5;
+    padding: 20px 5% 40px;
+    text-align: left;
+}
+
+.qna-box p:last-of-type {
+    margin-bottom: 20px;
+}
+
+.qna-box>:last-child {
+    color: #555;
+    text-decoration: underline;
+}
+
+.qna-box >:last-child:hover{
+    font-weight: bold;
+    color: black;
+}
+
+.qna-answer-see {
+    display: block !important;
+}
+
+.faq>div section>div>:last-child img {
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
+}
+
+/* my-qna-list */
+
+.qna-board>div>:nth-child(2) h5 {
+    text-align: left;
+}
+
+.qna-board>div>:nth-child(2)>:first-child button {
+    cursor: pointer;
+}
+
+.qna-board>div>:nth-child(2)>div {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.qna-board>div>:nth-child(2) div p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.qna-board>div>:nth-child(2)>div select {
+    width: 30%;
+}
+
+.qna-board>div>:nth-child(2)>div input,
+.qna-board>div>:nth-child(2)>div textarea {
+    margin: 0;
+}
+
+.qna-board>div>:nth-child(2)>button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.qna-submit>div img {
+    width: 50px;
+    margin: 0 auto 20px;
+}
+
+.qna-submit>div p {
+    margin: 20px 0;
+}
+
+.qna-submit>div div {
+    margin-top: 80px;
+}
+
+.qna-submit>div div button {
+    width: 48%;
+}
+
+.my-qna-list > section {
+    text-align: left;
+    margin: 0 auto 40px;
+}
+
+.my-qna-list > section img {
+    width: 50px;
+}
+
+.my-qna-list > section div{
+    margin: auto 0;
+}
+
+.my-qna-list > section button {
+    border: 0px;
+    padding: 0px;
+    color: rgb(69, 145, 189);
+}
+
+.my-qna-list > section button:hover{
+    color: black;
+}
+
+
+.my-qna-list>div>:nth-child(2)>h5 {
+    margin-bottom: 20px;
+}
+
+.my-qna-list>div>:nth-child(2)>h5 span {
+    font-size: 1.2rem;
+    color: rgb(69, 145, 189);
+}
+
+.my-qna-list>div>:nth-child(2) div section>:first-child {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    cursor: pointer;
+    padding: 20px 0;
+}
+
+.my-qna-list>div>:nth-child(2) div section>:first-child button {
+    padding: 0;
+    border: 0;
+    color: rgb(69, 145, 189)
+}
+
+.my-qna-list>div>:nth-child(2) div section>:first-child p {
+    width: 70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.my-qna-list>div>:nth-child(2) div section>:first-child img {
+    transform: rotate(180deg);
+    width: 12px;
+    margin: auto 0;
+    opacity: 0.7;
+}
+
+.my-qna-list>div>:nth-child(2) div section>:last-child {
+    background-color: #f5f5f5;
+    padding: 20px 5%;
+    text-align: left;
+}
+
+.my-qna-list>div>:nth-child(2) div section>:last-child div:first-of-type {
+    margin-bottom: 30px;
+}
+
+.my-qna-list>div>:nth-child(2) div section>:last-child div h5 {
+    margin-bottom: 10px;
+}
+
+/* comment */
+
+.cs-comment-form {
+    text-align: right;
+    margin: 80px 0 50px;
+}
+
+.cs-comment-form textarea {
+    margin-bottom: 20px;
+}
+
+.cs-comment section>div {
+    width: 80%;
+    text-align: left;
+}
+
+.cs-comment section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.cs-comment section p{
+    font-weight: 300;
+    content: none;
+    color: #555;
+}
+
+.cs-comment h5 {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.cs-comment section img:first-of-type {
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+}
+
+.cs-comment section img:last-of-type {
+    width: 15px;
+    height: 15px;
+}
+
+
+
+@media screen and (min-width: 1366px) {
+
+    .main-banner section>:last-child img {
+        height: 800px;
+    }
+
+    .main-banner section {
+        text-align: left;
+    }
+
+    .main-banner section>:first-child {
+        top: 30%;
+        left: 17%;
+    }
+
+    .main-banner section>:first-child h1 {
+        margin: 20px 0 30px;
+        font-size: 3rem;
+    }
+
+    .main-banner section>:first-child div {
+        margin: 0;
+        max-width: 210px;
+    }
+
 }

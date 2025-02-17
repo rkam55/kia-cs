@@ -1,38 +1,274 @@
-.App {
-  text-align: center;
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    word-break: keep-all;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    color: black;
+    position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    font-family: 'Cabin', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+    font-size: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+p,
+li {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+}
+
+li {
+    transition: 0.5s;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+img {
+    width: 100px;
+    display: block;
+}
+
+button {
+    font-size: 0.8rem;
+    border: 1px solid #2d2d37;
+    background: white;
+    padding: 8px 15px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover,
+button a:hover {
+    color: rgb(69, 145, 189);
+}
+
+.black-btn {
+    background-color: #2d2d37;
+    color: white;
+}
+
+.black-btn a {
+    color: white;
+}
+
+.black-btn a:hover {
+    color: white;
+}
+
+.black-btn:hover {
+    background-color: rgb(69, 145, 189);
+    color: white;
+    border: 1px solid rgb(69, 145, 189);
+}
+
+table {
+    border-collapse: collapse;
+    border: none;
+}
+
+article {
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 8%;
+}
+
+article>img {
+    width: 80px;
+    margin: 0 auto 5px;
+    opacity: 0.7;
+}
+
+article>h1 {
+    margin-bottom: 50px;
+}
+
+article>div {
+    padding: 30px 20px;
+    border: 1px solid #ccc;
+}
+
+article>div>:first-child {
+    margin-bottom: 50px;
+}
+
+article>div>:first-child h2 {
+    margin-bottom: 10px;
+}
+
+article>div>:first-child p span {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+}
+
+.pc,
+.pc-flex {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-flex-flow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+input {
+    font-size: 0.8rem;
+    padding: 8px;
+    margin: 0;
+    border: 1px solid #aaa;
+}
+
+input[type="text"] {
+    text-align: left;
+    width: 100%;
+    padding: 8px;
+    margin: 5px auto;
+    border: 1px solid #aaa;
+}
+
+input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    margin: auto 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    resize: none;
+    margin-top: 5px;
+}
+
+textarea::placeholder {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    appearance: none;
+    background: url('https://cdn.icon-icons.com/icons2/1339/PNG/512/downarrow_87468.png') no-repeat;
+    background-position: right 8px center;
+    background-size: 10px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+
+@media screen and (min-width: 1366px) {
+
+    .mo{
+        display: none;
+    }
+
+    .pc {
+        display: block;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    p,
+    li {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    input[type="text"] {
+        padding: 15px;
+    }
+
+    input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+    }
+
+    article {
+        width: 500px;
+        padding: 100px 0;
+    }
+
+    textarea::placeholder {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    select {
+        padding: 15px;
+        font-size: 0.9rem;
+        background-position: right 15px center;
+    }
+
 }
