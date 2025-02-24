@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IRouterProps {
     authentication : boolean;
 }
@@ -35,4 +37,11 @@ export interface ICommentProps {
 export interface ICommentFormProps {
     detail: ICsFormProps,
     getDetailData: (id: string | undefined) => {}
+}
+
+export interface IPaginationProps {
+    dataCount: number,
+    dataPerPage: number,
+    setStartPage: Dispatch<SetStateAction<number>>,
+    basePath: string,
 }

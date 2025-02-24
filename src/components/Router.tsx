@@ -16,10 +16,12 @@ const Router = ({ authentication }: IRouterProps) => {
         <>
           <Route path="/" element={<Home />} />
           <Route path="/cs" element={<CsList />} />
-          <Route path="/cs/:id" element={<CsDetail />} />
+          <Route path="/cs/:number" element={<CsList />} />
+          <Route path="/cs/:id/detail" element={<CsDetail />} />
           <Route path="/cs/:id/edit" element={<CsForm isEdit={true}/>} />
           <Route path="/cs/create" element={<CsForm isEdit={false}/>} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/mypage/:number" element={<Mypage />} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </>
       ) : (

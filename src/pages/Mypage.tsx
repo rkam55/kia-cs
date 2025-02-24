@@ -13,6 +13,7 @@ import {
 import { ICsFormProps } from "../interface";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import Pagination from "../components/Pagination";
 
 const Mypage = () => {
   // 나의 문의 확인 (나의 글만 확인), 로그아웃
@@ -77,6 +78,12 @@ const Mypage = () => {
     );
   }, []);
 
+  const [startPage, setStartPage] = useState<number>(1);
+  const dataCount = csList.length; // 29
+  const indexOfLastData = startPage * 3; // 1 * 3
+  const indexOfFirstData = indexOfLastData - 3;
+  const currentDatas = csList.slice(indexOfFirstData, indexOfLastData);
+
   return (
     <>
       <article className="my-qna-list">
@@ -102,7 +109,7 @@ const Mypage = () => {
             </h5>
             <div>
               {csList ? (
-                csList.map((cs) => (
+                currentDatas.map((cs) => (
                   <section key={cs.uid}>
                     <div
                       className="my-qna-btn"
@@ -146,6 +153,7 @@ const Mypage = () => {
               )}
             </div>
           </div>
+          <Pagination dataCount={dataCount} dataPerPage={3} setStartPage={setStartPage} basePath="mypage"/>
         </div>
       </article>
     </>

@@ -201,6 +201,11 @@ select {
     color: #777;
 }
 
+.pagination .focus{
+    color: rgb(69, 145, 189);
+    font-weight: bold;
+}
+
 
 @media screen and (min-width: 1366px) {
 

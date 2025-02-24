@@ -10,6 +10,7 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../firebase";
+import Pagination from "../components/Pagination";
 
 const categories: string[] = [
   "전체",
@@ -22,6 +23,7 @@ const categories: string[] = [
 const CsList = () => {
   const [csList, setCsList] = useState<ICsFormProps[]>([]);
   const [selectCategory, setSelectCategory] = useState<string>("전체");
+  const dataCount = csList.length;
 
   // 문의리스트 렌더링
   useEffect(() => {
@@ -80,6 +82,15 @@ const CsList = () => {
     );
   }, []);
 
+  // 시작페이지
+  const [startPage, setStartPage] = useState<number>(1);
+    
+  // 현재 페이지에 보여줄 데이터 (5)
+  // ex: 1page: 1~5, 2page: 6~10, 3page: 11~15 .....
+  const indexOfLastData = startPage * 5; // 3page * 5 = 15
+  const indexOfFirstData = indexOfLastData - 5; // 15 - 5 = 10
+  const currentDatas = csList.slice(indexOfFirstData, indexOfLastData);
+
   return (
     <article className="faq">
       <img src="https://d3337ehzyte0uu.cloudfront.net/static/media/logo_Black_Large.jpg" />
@@ -110,7 +121,7 @@ const CsList = () => {
             ))}
           </ul>
           {csList?.length > 0 ? (
-            csList.map((cs) => (
+            currentDatas.map((cs) => (
               <section key={cs.id}>
                 <div onClick={() => onToggleCs(cs.id)}>
                   <p>작성자: {cs.email?.split("@")[0]}</p>
@@ -120,7 +131,7 @@ const CsList = () => {
                   <div className="qna-box">
                     <h5>질문</h5>
                     <p>{cs.title}</p>
-                    <Link to={`/cs/${cs.id}`}>
+                    <Link to={`/cs/${cs.id}/detail`}>
                       <p>질문 자세히 보기</p>
                     </Link>
                   </div>
@@ -144,6 +155,7 @@ const CsList = () => {
             <section className="cs-none">문의가 없습니다.</section>
           )}
         </div>
+        <Pagination dataCount={dataCount} dataPerPage={5} setStartPage={setStartPage} basePath="cs"/>
       </div>
     </article>
   );
